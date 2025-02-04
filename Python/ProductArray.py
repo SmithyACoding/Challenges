@@ -14,18 +14,23 @@ Output: [0,0,9,0,0]
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        
-        suffix = 1
+       
+        suffix = prefix = 1
         #Create the answer list filled with 1s
         answer = [1]*len(nums)
 
-        #Calculate the prefix by multiplying previous values in nums and answer into the answer list 
-        for i in range(1, len(nums)):
-            answer[i] = answer[i-1] * nums[i-1] #E.G [1,2,3,4] = [1,1,2,6] (1*1, 2*1, 2*3)
+        #Calculate the prefix by setting the current value in answer to the prefix and stepping forwards through the list 
+        for i in range(len(nums)):
+            answer[i] = prefix
+            #Then update the prefix by multiplying it by the number at that position in nums
+            prefix *= nums[i]
         #Calculate the suffix by multiplying the current value in answer by the suffix and stepping backwards through the list
         for i in range(len(nums)-1, -1, -1):
-            answer[i] *= suffix #E.G 6*1, 2*4, 1*12, 1*24 
+            answer[i] *= suffix
             #Then update the suffix by multiplying it by the number at that position in nums
-            suffix *= nums[i] #E.G 1*4, 4*3, 12*2, 24*1
+            suffix *= nums[i]
+            print(suffix)
         
         return answer
+
+            
