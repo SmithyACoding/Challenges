@@ -21,3 +21,6 @@ The challenge of this was thinking of a way to check and compare each letter in 
 
 Summary of Ranges: [C#](https://github.com/SmithyACoding/Challenges/blob/1ac8ba338469a1e6b9fa231ec4cd1733fa80efbd/C%23/Ranges.cs) [Python](https://github.com/SmithyACoding/Challenges/blob/cab026980d1bf219c146be704af8d25dadf4da65/Python/Ranges.py)
 The challenge of this was trying to figure out how to keep track of the valid ranges. I decided to use two loops, one to iterate each over each number in nums and then another to increment i while the numbers are consecutive to each other. I could then format the string with the starting num and the num at the index that we finished incrementing to or just add the single number.
+
+Product of Array Except Self: [C#](https://github.com/SmithyACoding/Challenges/blob/3e0950e60a1800321e5b85eb9c66ae41c635a4cc/C%23/ProductArray.cs) [Python](https://github.com/SmithyACoding/Challenges/blob/3e0950e60a1800321e5b85eb9c66ae41c635a4cc/Python/ProductArray.py)
+The challenge of this was to loop through twice, once in each direction and update the prefix/suffix accordingly. I started by setting the current values to the prefix and then multiplying the prefix by the corresponding element in nums. I then multiplied each of these values by the suffix, moving backwards and then multiplying suffix by the corresponding element in nums.
